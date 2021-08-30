@@ -7,7 +7,10 @@ class Crud:
         return self.items[idx]
 
     def update(self, idx, value):
-        self.items[idx] = value  
+        if len(self.items) == 0:
+            self.items.append(value)
+        else:    
+            self.items[idx] = value  
 
     def remove(self, idx):
         self.items.pop(idx)        
@@ -31,12 +34,19 @@ floor1.create('room')
 
 room1 = floor1.read(0)
 
-print(floor1.type)
-print(floor1.items)
-print(room1.type)
+building.create('floor')
+print('floors', building.items)
 
-print(building.items)
+floor2 = building.read(2)
+print('rooms', floor2.items)
+floor2.update(0, room1)
+floor2.update(0, room1)
+print('rooms', floor2.items)
+print(floor2.items)
 
 building.remove(1)
 
 print(building.items)
+
+
+
