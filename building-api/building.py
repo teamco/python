@@ -15,7 +15,6 @@ class Crud:
     def remove(self, idx):
         self.items.pop(idx)        
 
-
 class Entity(Crud):
     def __init__(self, type):
         self.type = type
