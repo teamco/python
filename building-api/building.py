@@ -14,7 +14,7 @@ class Crud:
             self.items[idx] = value
 
     def remove(self, idx):
-        print('Start removing', self.type, 'item', self.index, idx)
+        print('Remove', self.type, 'item', self.index, idx)
         items = self.items[idx].items
         while(len(items) > 0):
             items[0].parent.remove(0)
